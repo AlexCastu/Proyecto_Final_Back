@@ -4,10 +4,13 @@ const Sillas = require("../models/SillaModel.js");
 const Paracaidas = require("../models/ParacaidasModel.js");
 
 const getProductosCesta = async () => {
-   let resultado = {
-      parapentes: "hols",
+   const retorno = {
+      Sillas: await Sillas.find({ enLaCesta: true }).populate("marca._id").exec(),
+      Parapentes: await Parapentes.find({ enLaCesta: true }).populate("marca._id").exec(),
+      Paracaidas: await Paracaidas.find({ enLaCesta: true }).populate("marca._id").exec(),
+      Accesorios: await Accesorio.find({ enLaCesta: true }).populate("marca._id").exec(),
    };
-   return resultado;
+   return retorno;
 };
 
-module.exports = getProductosCesta();
+module.exports = getProductosCesta;

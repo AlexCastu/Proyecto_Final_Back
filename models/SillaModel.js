@@ -4,11 +4,11 @@ const mongoosePaginate = require("mongoose-paginate-v2");
 const sillasShema = new Schema({
    modelo: String,
    price: Number,
-    img:String,
+   img: String,
+   enLaCesta: Boolean,
    marca: {
       _id: { type: Schema.Types.ObjectId, ref: "marca" },
       nombre: String,
-
    },
 });
 sillasShema.plugin(mongoosePaginate);

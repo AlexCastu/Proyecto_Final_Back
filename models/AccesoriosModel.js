@@ -4,7 +4,8 @@ const mongoosePaginate = require("mongoose-paginate-v2");
 const accesoriosShema = new Schema({
    modelo: String,
    price: Number,
-    img:String,
+   enLaCesta: Boolean,
+   img: String,
    marca: {
       _id: { type: Schema.Types.ObjectId, ref: "marca" },
       nombre: String,

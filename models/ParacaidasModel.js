@@ -5,6 +5,7 @@ const paracaidasShema = new Schema({
    enLaCesta: Boolean,
    modelo: String,
    price: Number,
+   enLaCesta: Boolean,
    img: String,
    marca: {
       _id: { type: Schema.Types.ObjectId, ref: "marca" },
