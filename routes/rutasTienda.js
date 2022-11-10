@@ -128,6 +128,7 @@ router.get("/productoUnico", async (request, response, next) => {
 router
    .get("/agregarALaCesta", async (request, response, next) => {
       const data = request.query;
+
       try {
          const docs = await agregarCarrito(data);
          response.json(docs).status(200).end();
@@ -142,6 +143,14 @@ router
       } catch (err) {
          next(err);
       }
+   })
+   .get("/eliminarDeLaCesta", async (request, response, next) => {
+      console.log(request.query);
+      try {
+         const docs = await getProductosCesta();
+         response.json(docs).status(200).end();
+      } catch (err) {
+         next(err);
+      }
    });
-
 module.exports = router;
