@@ -1,7 +1,6 @@
 const Parapentes = require("../models/ParapenteModel");
 
 const getParapentes = async (data) => {
-   console.log(data);
    const precio = data.precio === "0" || data.precio === "undefined" ? 1000000 : data.precio;
    let ordenPrecio = data.ordenPrecio === "1" ? { price: 1 } : data.ordenPrecio === "2" ? { price: -1 } : {};
    let ordenMarca = data.ordenMarca === "1" ? { "marca.nombre": 1 } : data.ordenMarca === "2" ? { "marca.nombre": -1 } : {};

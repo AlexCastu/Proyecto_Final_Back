@@ -145,9 +145,8 @@ router
       }
    })
    .get("/eliminarDeLaCesta", async (request, response, next) => {
-      console.log(request.query);
       try {
-         const docs = await getProductosCesta();
+         const docs = await eliminarDeLaCesta();
          response.json(docs).status(200).end();
       } catch (err) {
          next(err);
