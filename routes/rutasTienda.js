@@ -13,6 +13,7 @@ const getAllAccesorios = require("../services/getAllAccesorios");
 const getProducto = require("../services/getProducto");
 const agregarCarrito = require("../services/agregarCarrito");
 const getProductosCesta = require("../services/getProductosCesta");
+const eliminarDeLaCesta = require("../services/eliminarDeLaCesta");
 
 // Router a los servicios ALL
 
