@@ -146,6 +146,7 @@ router
       }
    })
    .get("/eliminarDeLaCesta", async (request, response, next) => {
+      const data = request.query;
       try {
          const docs = await eliminarDeLaCesta();
          response.json(docs).status(200).end();
