@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const routerTienda = require("./routes/rutasTienda");
 const cors = require("cors");
-const config = require("./config");
+
 app.use(cors());
 
 app.use(express.static("public"));
@@ -18,6 +18,5 @@ app.use((err, req, resp, next) => {
    next();
 });
 
-app.listen(config.PORT, config.HOST, () => {
-   console.log("Servidor conectado en host:" + config.HOST + " y puerto: " + config.PORT);
-});
+app.listen(8080);
+console.log("aplicacion en puerto :");
